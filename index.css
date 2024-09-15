@@ -1,0 +1,52 @@
+:root {
+    --col-count: 11;
+    --row-count: 10;
+    --col-witdh: calc(100% / var(--col-count));
+    --row-height: calc(100% / var(--row-count));
+    --black: #000000;
+    --dark-gray: #111111;
+}
+
+html, body {
+    margin: 0;
+    padding: 0;
+    height: 100vh;
+    width: 100vw;
+    background: var(--black);
+    color: var(--dark-gray);
+    font-size: 2rem;
+    overflow: hidden;
+}
+
+.container {
+    height: 100%;
+    width: 100%;
+    transition: width 0.3s, height 0.3s;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.row {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: row;
+    width: 100%;
+    height: var(--row-height);
+}
+
+.col {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: var(--col-witdh);
+    /*height: 108PX;*/
+    /*height: var(--row-height);*/
+}
+
+.on {
+    color: white;
+    font-weight: bold;
+}
