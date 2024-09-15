@@ -1,9 +1,20 @@
+const Config = ClockConfig;
+
 function init() {
     console.log('init');
-    document.documentElement.style.setProperty('--background', ClockConfig.primaryColor);
-    document.documentElement.style.setProperty('--non-active-color', ClockConfig.nonActiveColor);
-    document.documentElement.style.setProperty('--active-color', ClockConfig.activeColor);
+    setup();
     run();
+}
+
+function setup() {
+    document.documentElement.style.setProperty('--background', Config.primaryColor);
+    document.documentElement.style.setProperty('--non-active-color', Config.nonActiveColor);
+    document.documentElement.style.setProperty('--active-color', Config.activeColor);
+    const LANGUAGE = Config.language;
+    const LOCATION = Config.state;
+    if(LANGUAGE === 'de' && LOCATION === 'switzerland') {
+        document.querySelector('.language-de.switzerland').style.display = 'flex';
+    }
 }
 
 function run() {

@@ -24,9 +24,12 @@ html, body {
     width: 100%;
     transition: width 0.3s, height 0.3s;
     text-align: center;
-    display: flex;
+}
+
+.language {
+    height: 100%;
+    display: none;
     flex-direction: column;
-    justify-content: center;
 }
 
 .row {
