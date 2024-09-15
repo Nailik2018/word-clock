@@ -3,8 +3,9 @@
     --row-count: 10;
     --col-witdh: calc(100% / var(--col-count));
     --row-height: calc(100% / var(--row-count));
-    --black: #000000;
-    --dark-gray: #111111;
+    --background: #000000;
+    --non-active-color: #111111;
+    --active-color: #ff0000
 }
 
 html, body {
@@ -12,8 +13,8 @@ html, body {
     padding: 0;
     height: 100vh;
     width: 100vw;
-    background: var(--black);
-    color: var(--dark-gray);
+    background: var(--background);
+    color: var(--non-active-color);
     font-size: 2rem;
     overflow: hidden;
 }
@@ -47,6 +48,6 @@ html, body {
 }
 
 .on {
-    color: white;
+    color: var(--active-color);
     font-weight: bold;
 }

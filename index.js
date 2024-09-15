@@ -1,5 +1,8 @@
 function init() {
     console.log('init');
+    document.documentElement.style.setProperty('--background', ClockConfig.primaryColor);
+    document.documentElement.style.setProperty('--non-active-color', ClockConfig.nonActiveColor);
+    document.documentElement.style.setProperty('--active-color', ClockConfig.activeColor);
     run();
 }
 
@@ -29,12 +32,13 @@ async function runner() {
     let minutes = roundMinutes(now.getMinutes());
     hour = hour % 12;
     hour = hour ? hour : 12;
+    // hour = 2;
+    // minutes = 59;
     if (minutes >= 23 && minutes <= 59) {
         hour++;
     }
     printHour(hour);
     printMinutes(minutes);
-    printAfterOrBefore(minutes);
     console.log(`Stunden: ${hour}`);
     console.log(`Minuten: ${minutes}`);
     console.log(`Uhrzeit: ${time}`);
@@ -54,17 +58,6 @@ function roundMinutes(minutes) {
     else if (minutes <= 52) return 50;
     else if (minutes <= 57) return 55;
     else return 0;
-}
-
-function printAfterOrBefore(minutes) {
-    if (minutes === 0 || minutes === 30) {
-        elementOff('.before');
-        elementOff('.after');
-    } else if (minutes >= 1 && minutes <= 20) {
-        elementOnOff('.after', '.before');
-    } else {
-        elementOnOff('.before', '.after');
-    }
 }
 
 function printHour(hour) {
