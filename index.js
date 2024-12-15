@@ -1,5 +1,7 @@
 const Config = ClockConfig;
 
+init();
+
 function init() {
     console.log('init');
     setup();
@@ -41,10 +43,6 @@ async function runner() {
     const time = now.toLocaleTimeString();
     let hour = now.getHours();
     let minutes = roundMinutes(now.getMinutes());
-    hour = hour % 12;
-    hour = hour ? hour : 12;
-    // hour = 2;
-    // minutes = 59;
     if (minutes >= 23 && minutes <= 59) {
         hour++;
     }
@@ -76,20 +74,15 @@ function printHour(hour) {
     elementOn(`.hour-${hour}`);
 }
 
-function printMinutes(minutes) {
-    elementOff(`.minutes`);
-    elementOn(`.minutes-${minutes}`);
+function elementOn(selector) {
+    document.querySelectorAll(selector).forEach(element => {
+        element.classList.add('on');
+    });
 }
 
 function elementOff(selector) {
     document.querySelectorAll(selector).forEach(element => {
         element.classList.remove('on');
-    });
-}
-
-function elementOn(selector) {
-    document.querySelectorAll(selector).forEach(element => {
-        element.classList.add('on');
     });
 }
 
@@ -102,4 +95,12 @@ function elementOnOff(selectorOn, selectorOff) {
     });
 }
 
-init();
+function printMinutes(minutes) {
+    elementOff(`.minutes`);
+    elementOn(`.minutes-${minutes}`);
+}
+
+
+
+
+
