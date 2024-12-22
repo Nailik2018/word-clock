@@ -3,5 +3,9 @@ ClockConfig = {
     nonActiveColor: '#111111',
     activeColor: '#FFFFFF',
     language: 'de',
-    state: 'switzerland'
+    state: 'switzerland',
+    randomImage: {
+        active: true,
+        countImages: 0
+    }
 }

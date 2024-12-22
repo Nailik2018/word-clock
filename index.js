@@ -3,6 +3,7 @@ const Config = ClockConfig;
 init();
 
 function init() {
+    showSpinner();
     console.log('init');
     setup();
     run();
@@ -21,6 +22,7 @@ function setup() {
 
 function run() {
     console.log('run');
+    setTimeout(hideSpinner, 1000)
     setInterval(runner, 1000);
 }
 
@@ -100,7 +102,14 @@ function printMinutes(minutes) {
     elementOn(`.minutes-${minutes}`);
 }
 
+function showSpinner() {
+    const spinner = document.querySelector('#loading-spinner');
+    spinner.style.display = 'block'; // Spinner sichtbar machen
+}
 
-
+function hideSpinner() {
+    const spinner = document.querySelector('.loading-spinner-container');
+    spinner.style.display = 'none'; // Spinner ausblenden
+}
 
 
