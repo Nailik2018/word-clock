@@ -27,20 +27,6 @@ function run() {
 }
 
 async function runner() {
-    /*
-    let width = window.innerWidth;
-    let height = window.innerHeight;
-    console.log(`width: ${width}`);
-    console.log(`height: ${height}`);
-    if (width > height) {
-        width = height;
-    } else if ( width < height) {
-        height = width;
-    }
-    console.log(`width: ${width}`);
-    console.log(`height: ${height}`);
-    //window.resizeTo(height, width);
-     */
     const now = new Date();
     const time = now.toLocaleTimeString();
     let hour = now.getHours();
@@ -103,13 +89,11 @@ function printMinutes(minutes) {
 }
 
 function showSpinner() {
-    const spinner = document.querySelector('#loading-spinner');
-    spinner.style.display = 'block'; // Spinner sichtbar machen
+    const spinner = document.querySelector('.loading-spinner');
+    spinner.style.display = 'block';
 }
 
 function hideSpinner() {
     const spinner = document.querySelector('.loading-spinner-container');
-    spinner.style.display = 'none'; // Spinner ausblenden
+    spinner.style.display = 'none';
 }
-
-
