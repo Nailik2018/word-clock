@@ -6,6 +6,6 @@ ClockConfig = {
     state: 'switzerland',
     randomImage: {
         active: true,
-        countImages: 0
+        countImages: 2
     }
 }

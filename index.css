@@ -7,6 +7,7 @@
     --non-active-color: #111111;
     --active-color: #ff0000;
     --white: white;
+    --black: black;
 }
 
 html, body {
@@ -60,7 +61,7 @@ html, body {
     align-items: center;
     height: 100%;
     width: 100%;
-    background: black;
+    background: white;
 }
 
 .spinner {
@@ -73,7 +74,7 @@ html, body {
 
 .spinner-circle {
     border: 5px solid rgba(0, 0, 0, 0.1);
-    border-top: 5px solid var(--white);
+    border-top: 5px solid var(--black);
     border-radius: 50%;
     width: 400px;
     height: 400px;
@@ -87,4 +88,14 @@ html, body {
     100% {
         transform: rotate(360deg);
     }
+}
+
+.image-container {
+    height: 100%;
+    width: 100%;
+}
+
+.image{
+    height: 100%;
+    width: 100%;
 }
